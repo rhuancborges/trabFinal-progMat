@@ -1,0 +1,52 @@
+INSTANCIA 1.
+INSTANCIA 1.
+INSTANCIA 1.
+Solução via solver: 294.0 em 66.71562838554382 segundos
+Solução inicial via AG: 293.2
+Solução final via AG: 293.6 em 263.0896997451782 segundos (5 execuções)
+
+INSTANCIA 2.
+Solução via solver: 282.0 em 60.01462388038635 segundos
+Solução inicial via AG: 279.2
+Solução final via AG: 280.0 em 249.80484127998352 segundos (5 execuções)
+
+INSTANCIA 3.
+Solução via solver: 294.0 em 65.8819944858551 segundos
+Solução inicial via AG: 294.2
+Solução final via AG: 294.4 em 286.89046478271484 segundos (5 execuções)
+
+INSTANCIA 4.
+Solução via solver: 317.0 em 80.69730687141418 segundos
+Solução inicial via AG: 311.6
+Solução final via AG: 312.2 em 355.3948278427124 segundos (5 execuções)
+
+INSTANCIA 5.
+Solução via solver: 312.0 em 85.53541970252991 segundos
+Solução inicial via AG: 312.0
+Solução final via AG: 312.0 em 356.8831088542938 segundos (5 execuções)
+
+INSTANCIA 6.
+Solução via solver: 294.0 em 81.7808735370636 segundos
+Solução inicial via AG: 288.2
+Solução final via AG: 290.4 em 239.91076254844666 segundos (5 execuções)
+
+INSTANCIA 7.
+Solução via solver: 282.0 em 74.26790809631348 segundos
+Solução inicial via AG: 274.0
+Solução final via AG: 276.8 em 231.54822182655334 segundos (5 execuções)
+
+INSTANCIA 8.
+Solução via solver: 294.0 em 81.38158059120178 segundos
+Solução inicial via AG: 289.8
+Solução final via AG: 293.0 em 254.71185755729675 segundos (5 execuções)
+
+INSTANCIA 9.
+Solução via solver: 317.0 em 97.39182019233704 segundos
+Solução inicial via AG: 309.4
+Solução final via AG: 310.8 em 308.2993860244751 segundos (5 execuções)
+
+INSTANCIA 10.
+Solução via solver: 312.0 em 92.77905082702637 segundos
+Solução inicial via AG: 310.4
+Solução final via AG: 310.4 em 328.4136207103729 segundos (5 execuções)
+
