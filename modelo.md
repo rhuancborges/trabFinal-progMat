@@ -17,19 +17,25 @@ $$
 
 ## Restrições
 
-- Determinar o valor de S para cada fonte $s$ possível como a quantidade de servidores atingidos pela fake news no contexto em que ela partiu de $s$:
+- Determinar o valor de $S$ para cada fonte $s$ possível como a quantidade de servidores atingidos pela fake news no contexto em que ela partiu de $s$. Essa restrição determina o pior caso:
   
 $$
 S \geq \sum_{u \in V}y_{u,s} \space \forall s \in V
 $$    
     
-- O tempo em que um vértice $v$ é alcançado pela fake news é menor ou igual a $T$. Essa restrição força $y_{v,s} = 1$ se o tempo $t_{v,s} \lt T$. Vale ressaltar que é uma restrição "perigosa", pois ela não garante $y_{v,s} = 1$ quando $t_{v,s} = T$ nem $y_{v,s} = 0$ quando $t_{v,s} \gt T$:
+- O tempo em que um vértice $v$ é alcançado pela fake news é menor ou igual a $T$. Essas duas restrições forçam $y_{v,s} = 1$ se o tempo $t_{v,s} \leq T$ e $y_{v,s} = 0$ se o tempo $t_{v,s} \geq T+1$.
   
 $$
-t_{v,s} \geq (T+1)(1-y_{v,s}) \space \forall v,s \in V
+(1-y_{v,s})(T+1) \leq t_{v,s}
+$$
+$$
+t_{v,s} \leq Ty_{v,s}+M(1-y_{v,s})
+$$
+$$
+\forall v, s \in V 
 $$
 
-- O tempo em que um vértice $v$ é alcançado pela fake news é calculado pelo tempo em que seu predecessor $u$ é alcançado somado ao tempo gasto no enlance, bem como a um valor de $\delta$ se algum dos recursos foi alocado no vértice $u$:
+- O tempo em que um vértice $v$ é alcançado pela fake news é calculado pelo tempo em que seu predecessor $u$ é alcançado somado ao tempo gasto no enlance, bem como a um valor de $\delta$ se algum dos $i$ recursos foi alocado no vértice $u$:
   
 $$
 t_{v,s} \leq t_{u,s} + t_{uv} + \delta*\sum_{i=1}^{\alpha}x_{i,u}, \space \forall (u,v) \in E
@@ -53,7 +59,7 @@ $$
 t_{u,s} \geq \sum_{i=1}^{\alpha}x_{i,u}*\beta_{i}, \space \forall u,s \in V
 $$
 
-- No contexto em que a fake news parte do servidor $s$, o valor de $y$ para o vértice $s$ é igual a 1 e o tempo em que o vértice $s$ é alcançado é 0
+- No cenário em que a fake news partiu do servidor $s$, o valor de $y$ para o próprio vértice $s$ é igual a 1 e o tempo em que esse vértice $s$ é alcançado é 0:
   
 $$
 y_{s,s} = 1
