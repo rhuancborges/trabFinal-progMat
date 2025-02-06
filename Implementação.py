@@ -39,6 +39,15 @@ def lerArquivoDat(nomeArquivo):
             vertices.add(v)
         vertices = list(sorted(vertices)) # Converte o set em lista, para retornar
 
+        maiorGrau = 0
+        verticeMaior = ''
+        for u in vertices:
+            grau = len(grafo[u])
+            if grau > maiorGrau:
+                verticeMaior = u
+                maiorGrau = grau
+                
+
     return {
         "n": n,
         "delta": delta,
@@ -47,7 +56,8 @@ def lerArquivoDat(nomeArquivo):
         "betas": betas,
         "arcos": arcos,
         "vertices": vertices,
-        "grafo": grafo
+        "grafo": grafo,
+        "maiorGrau": (verticeMaior, maiorGrau)
     }
 
 # FUNÇÃO PARA IMPLEMENTAR O MODELO MATEMÁTICO E RESOLVÊ-LO VIA SOLVER GUROBI
@@ -156,13 +166,13 @@ def calcularAlcance(fonte, individuo, dados):
     return quantAlcancados
 
 # FUNÇÃO DO ALGORITMO GENÉTICO PARA CALCULAR APTIDÃO DO INDIVÍDUO
-# Dado um indivíduo (alocação de recursos), para todos os possíveis vértices como fontes, essa função 
-# chama a função calcularAlcance() e retorna o maior valor de alcancabilidade obtido (ou seja, o pior caso)
+# Dado um indivíduo (alocação de recursos), essa função pega como fonte o vértice com mais adjacências e 
+# chama a função calcularAlcance(), retornando o valor de alcancabilidade obtido
+# Foi realizada a escolha de vértice de maior grau, pois tem maior probabilidade de alcançar mais vértices,
+# porém, por se tratar de uma heurística, essa alcancabilidade máxima não é garantida
 def aptidao(individuo, dados):
-    resultado = []
-    for verticeFonte in dados["vertices"]:
-        resultado.append(calcularAlcance(verticeFonte, individuo, dados))
-    return max(resultado)
+    verticeFonte, grau = dados["maiorGrau"]
+    return calcularAlcance(verticeFonte, individuo, dados)
 
 # FUNCAO DO ALGORITMO GENÉTICO QUE INICIALIZA ALEATORIAMENTE UMA POPULAÇÃO DE k INDIVÍDUOS
 # Ela gera um número aleatório no intervalo [0,alfa] para alocar os recursos randomicamente e em quantidade factível 
@@ -211,7 +221,7 @@ def cruzamento(individuo1, individuo2, taxaCrossOver):
         chaves = list(individuo1.keys())
         
         # Sorteia dois pontos para o crossover
-        ponto1, ponto2 = sorted(random.sample(range(len(chaves)), 2
+        ponto1, ponto2 = sorted(random.sample(range(len(chaves)), 2))
                                              
         # Cria os filhos trocando os valores entre os dois pontos
         filho1 = {}
