@@ -10,7 +10,7 @@
 <p>Esse repositório armazena o que foi desenvolvido no trabalho final da disciplina GCC118 - Programação Matemática do curso de Ciência da Computação da Universidade Federal de Lavras (UFLA)</p>
 
 ## Modelo
-A primeira etapa do desenvolvimento do trabalho foi a elaboração de uma modelo matemático que pudesse ser executado e otimizado pelo solver Gurobi. O arquivo Markdown em que consta o modelo matemático para o Problema da Fake News está presente neste repositório e pode ser acessado abaixo:
+A primeira etapa do desenvolvimento do trabalho foi a elaboração de um modelo matemático que pudesse ser executado e otimizado pelo solver Gurobi. O arquivo Markdown em que consta o modelo matemático para o Problema da Fake News está presente neste repositório e pode ser acessado abaixo:
 
 [`modelo.md`](https://github.com/rhuancborges/trabFinal-progMat/blob/main/modelo.md)
 
